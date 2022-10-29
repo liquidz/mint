@@ -91,4 +91,5 @@
 
 
 (comment
-  (render "{{-> name greet}}!" {:name "world" :greet #(str "Hello " %)}))
+  (render "{{-> name greet}}!" {:name "world" :greet #(str "Hello " %)})
+  (render "{{->> name (str \"Hello \")}}!" {:name "world" :str str}))

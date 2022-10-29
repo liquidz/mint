@@ -9,6 +9,7 @@ A proof of concept for simple template engine using threading macros.
 
 * Similar mustache, but threading macro
 ** `{{-> v f (g "foo")}}`
+** `{{->> v f (g "foo")}}`
 * No dependencies
 
 == Example
@@ -17,6 +18,10 @@ A proof of concept for simple template engine using threading macros.
 ----
 (render "{{-> name greet}}!"
         {:name "world" :greet #(str "Hello " %)}))
+;; => "Hello world!"
+
+(render "{{->> name (str \"Hello \")}}!"
+        {:name "world" :str str}))
 ;; => "Hello world!"
 ----
 
