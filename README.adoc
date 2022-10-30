@@ -16,12 +16,15 @@ A proof of concept for simple template engine using threading macros.
 
 [source,clojure]
 ----
-(render "{{-> name greet}}!"
-        {:name "world" :greet #(str "Hello " %)}))
+(require '[thrempl.core :as thrempl])
+;; => nil
+
+(thrempl/render "{{-> name greet}}!"
+                {:name "world" :greet #(str "Hello " %)})
 ;; => "Hello world!"
 
-(render "{{->> name (str \"Hello \")}}!"
-        {:name "world" :str str}))
+(thrempl/render "{{->> name (str \"Hello \")}}!"
+                {:name "world" :str str})
 ;; => "Hello world!"
 ----
 

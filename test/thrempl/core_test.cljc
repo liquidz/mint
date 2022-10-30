@@ -1,7 +1,14 @@
 (ns thrempl.core-test
   (:require
    [clojure.test :as t]
+   #?@(:bb []
+       :clj [[clojure.java.io :as io]
+             testdoc.core])
    [thrempl.core :as sut]))
+
+#?(:bb nil
+   :clj (t/deftest README-test
+          (t/is (testdoc (slurp (io/file "README.adoc"))))))
 
 (t/deftest eval*-test
   (t/is (= 10 (sut/eval* 'foo {:foo 10})))
@@ -16,7 +23,10 @@
   (t/testing "thread last"
     (t/is (= 10 (sut/eval* '(->> 9 inc) {:inc inc})))
     (t/is (= 10 (sut/eval* '(->> foo (- 11)) {:foo 1, :- -})))
-    (t/is (= 10 (sut/eval* '(->> (inc foo) (- 11)) {:foo 0, :- -, :inc inc})))))
+    (t/is (= 10 (sut/eval* '(->> (inc foo) (- 11)) {:foo 0, :- -, :inc inc}))))
+
+  (t/testing "qualified keyword"
+    (t/is (= 10 (sut/eval* '(->> foo/bar) {:foo/bar 10})))))
 
 (t/deftest render-test
   (t/is (= "" (sut/render "" {})))
