@@ -1,5 +1,7 @@
 = thrempl
 
+image:https://github.com/liquidz/thrempl/workflows/test/badge.svg["GitHub Actions for test workflow", link="https://github.com/liquidz/thrempl/actions?query=workflow%3Atest"]
+image:https://github.com/liquidz/thrempl/workflows/lint/badge.svg["GitHub Actions for lint workflow", link="https://github.com/liquidz/thrempl/actions?query=workflow%3Alint"]
 image:https://img.shields.io/badge/babashka-compatible-brightgreen["Babashka", link="https://github.com/babashka/babashka"]
 image:https://img.shields.io/badge/nbb-compatible-brightgreen["nbb", link="https://github.com/babashka/nbb"]
 
