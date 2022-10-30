@@ -88,8 +88,3 @@
       (if (and body post)
         (recur post (conj res pre (eval-body body data)))
         (str/join "" (conj res pre))))))
-
-
-(comment
-  (render "{{-> name greet}}!" {:name "world" :greet #(str "Hello " %)})
-  (render "{{->> name (str \"Hello \")}}!" {:name "world" :str str}))
