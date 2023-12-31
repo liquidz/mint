@@ -1,10 +1,10 @@
-(ns thrempl.core-test
+(ns mint.core-test
   (:require
    [clojure.test :as t]
+   [mint.core :as sut]
    #?@(:bb []
        :clj [[clojure.java.io :as io]
-             testdoc.core])
-   [thrempl.core :as sut]))
+             testdoc.core])))
 
 #?(:bb nil
    :clj (t/deftest README-test

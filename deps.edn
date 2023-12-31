@@ -3,8 +3,8 @@
 
  :aliases
  {:dev {:extra-paths ["test"]
-        :extra-deps {lambdaisland/kaocha {:mvn/version "1.71.1119"}
-                     com.github.liquidz/testdoc {:mvn/version "1.5.103"}}}
+        :extra-deps {lambdaisland/kaocha {:mvn/version "1.87.1366"}
+                     com.github.liquidz/testdoc {:mvn/version "1.5.109"}}}
 
   :test {:main-opts ["-m" "kaocha.runner"]}
 

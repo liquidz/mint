@@ -1,7 +1,7 @@
-= thrempl
+= Mint
 
-image:https://github.com/liquidz/thrempl/workflows/test/badge.svg["GitHub Actions for test workflow", link="https://github.com/liquidz/thrempl/actions?query=workflow%3Atest"]
-image:https://github.com/liquidz/thrempl/workflows/lint/badge.svg["GitHub Actions for lint workflow", link="https://github.com/liquidz/thrempl/actions?query=workflow%3Alint"]
+image:https://github.com/liquidz/mint/workflows/test/badge.svg["GitHub Actions for test workflow", link="https://github.com/liquidz/mint/actions?query=workflow%3Atest"]
+image:https://github.com/liquidz/mint/workflows/lint/badge.svg["GitHub Actions for lint workflow", link="https://github.com/liquidz/mint/actions?query=workflow%3Alint"]
 image:https://img.shields.io/badge/babashka-compatible-brightgreen["Babashka", link="https://github.com/babashka/babashka"]
 image:https://img.shields.io/badge/nbb-compatible-brightgreen["nbb", link="https://github.com/babashka/nbb"]
 
@@ -10,6 +10,7 @@ A proof of concept for simple template engine using threading macros.
 == Concept
 
 * Similar mustache, but threading macro
+** `{{foo}}`
 ** `{{-> v f (g "foo")}}`
 ** `{{->> v f (g "foo")}}`
 * No dependencies
@@ -18,21 +19,21 @@ A proof of concept for simple template engine using threading macros.
 
 [source,clojure]
 ----
-(require '[thrempl.core :as thrempl])
+(require '[mint.core :as mint])
 ;; => nil
 
-(thrempl/render "{{-> name greet}}!"
+(mint/render "{{-> name greet}}!"
                 {:name "world" :greet #(str "Hello " %)})
 ;; => "Hello world!"
 
-(thrempl/render "{{->> name (str \"Hello \")}}!"
+(mint/render "{{->> name (str \"Hello \")}}!"
                 {:name "world" :str str})
 ;; => "Hello world!"
 ----
 
 == License
 
-Copyright © 2022 https://twitter.com/uochan[Masashi Iizuka]
+Copyright © 2022-2023 https://scrapbox.io/uochan/uochan[Masashi Iizuka]
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at

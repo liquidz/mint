@@ -1,4 +1,4 @@
-(ns thrempl.core
+(ns mint.core
   (:require
    [clojure.string :as str]))
 
