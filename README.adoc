@@ -5,11 +5,11 @@ image:https://github.com/liquidz/mint/workflows/lint/badge.svg["GitHub Actions f
 image:https://img.shields.io/badge/babashka-compatible-brightgreen["Babashka", link="https://github.com/babashka/babashka"]
 image:https://img.shields.io/badge/nbb-compatible-brightgreen["nbb", link="https://github.com/babashka/nbb"]
 
-A proof of concept for simple template engine using threading macros.
+A simple single-line template engine like Mustache and Clojure.
 
 == Concept
 
-* Similar mustache, but threading macro
+* Similar mustache, but Clojure like style
 ** `{{foo}}`
 ** `{{-> v f (g "foo")}}`
 ** `{{->> v f (g "foo")}}`
@@ -23,13 +23,18 @@ A proof of concept for simple template engine using threading macros.
 ;; => nil
 
 (mint/render "{{-> name greet}}!"
-                {:name "world" :greet #(str "Hello " %)})
+             {:name "world" :greet #(str "Hello " %)})
 ;; => "Hello world!"
 
 (mint/render "{{->> name (str \"Hello \")}}!"
-                {:name "world" :str str})
+             {:name "world" :str str})
 ;; => "Hello world!"
 ----
+
+== Supported functions
+
+* `->`, `->>`, `some->`, `some->>`
+* `when`
 
 == License
 
