@@ -13,4 +13,4 @@
              :main-opts ["-m" "antq.core"]}
 
   :build {:deps {com.github.liquidz/build.edn {:mvn/version "0.11.241"}}
-          :ns-default build}}}
+          :ns-default build-edn.main}}}
