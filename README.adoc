@@ -15,7 +15,9 @@ A simple single-line template engine like Mustache and Clojure.
 ** `{{->> v f (g "foo")}}`
 * No dependencies
 
-== Example
+== Usage
+
+image:https://img.shields.io/clojars/v/com.github.liquidz/mint["Clojars Project", link="https://clojars.org/com.github.liquidz/mint"]
 
 [source,clojure]
 ----
